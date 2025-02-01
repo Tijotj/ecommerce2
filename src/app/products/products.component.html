@@ -1,0 +1,38 @@
+<div class="row">
+    @if(productsArray.length>0){
+        <h2>Exclusive Products</h2>
+
+            <div class="category-list text-center">
+                <ul>
+                    @for(item of categoryList;track item){
+                        @if($index < 4){
+                            <li (click)="loadProductsByCategory(item.categoryId)"><a class="text-decoration-none fw-semibold" [ngClass]="selectedCategory == item.categoryId ? 'text-danger' : 'text-black'">{{item.categoryName}}</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        
+        
+        @for(product of productsArray;track product){
+            <div class="col-3">
+                <!-- <div class="pdt-item">
+                    <img [src]="product.productImageUrl" height="100" />
+                <h5>{{product.productName}}</h5>
+                <p>{{product.productDescription}}</p>
+                </div> -->
+                <div class="card mt-2 p-2">
+                    <img [src]="product.productImageUrl" width="150" />
+                    <div class="card-body">
+                        <div class="card-title">{{product.productShortName}}</div>
+                        <div class="card-text">
+                            <span class="text-danger">${{product.productPrice}} </span>
+                        </div>
+                        <div class="card-text text-end add-to-cart">
+                            <button type="button" class="rounded-1 bg-success pt-1 pb-1 pe-2" (click)="add2cart(product.productId)"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>    

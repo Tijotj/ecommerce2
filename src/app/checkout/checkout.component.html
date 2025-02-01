@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-6 border rounded-1 p-3">
+        <h4>Billing Address</h4>
+        <form>
+            <div class="row pt-2">
+                <div class="col-6">
+                    <input type="text" name="city" class="form-control" placeholder="City" [(ngModel)]="checkoutObj.DeliveryCity" />
+                </div>
+                <div class="col-6">
+                    <input type="text" name="pincode" class="form-control" placeholder="Pincode" [(ngModel)]="checkoutObj.DeliveryPinCode" />
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col-6">
+                    <textarea name="address1" placeholder="Address Line 1" class="form-control" [(ngModel)]="checkoutObj.DeliveryAddress1"></textarea>
+                </div>
+                <div class="col-6">
+                    <textarea name="address2" placeholder="Address Line 2" class="form-control" [(ngModel)]="checkoutObj.DeliveryAddress2"></textarea>
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col-6">
+                    <textarea name="landmark" placeholder="Landmark" class="form-control" [(ngModel)]="checkoutObj.DeliveryLandMark"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-5 border rounded-1 p-3 ms-1">
+        <h4>Your Order</h4>
+        @for(item of cartItems;track item){
+            <div class="row">
+                <div class="col-6">
+                    <img [src]="item.productImageUrl" height="100" />
+                </div>
+                <div class="col-6">
+                    <p>{{item.productName | slice : 0 : 20}}...<br />${{item.productPrice}}</p>
+                    <p>Qty: {{item.quantity}}</p>
+                </div>
+            </div>
+        }
+        <div class="pt-2 text-end">
+            <button type="button" class="btn btn-primary" (click)="callPlaceOrder()">Place Order</button>
+        </div>
+    </div>
+</div>

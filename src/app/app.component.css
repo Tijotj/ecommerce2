@@ -1,0 +1,96 @@
+header h1 a {
+    background: url('/ecommerce.png') no-repeat;
+    background-size: 50px;
+    color: #9f2b9a;
+    font-size: 24px;
+    padding: 22px 0 0 48px;
+    text-decoration: none;
+    display: block;
+    height: 90px;
+    width: 90px;
+}
+header h1 {
+    float: left;
+    padding-top: 10px;
+}
+header nav {
+    float: right;
+}
+header ul li {
+    display: inline;
+    padding: 5px 10px;
+}
+header ul li a {
+    text-decoration: none;
+}
+header ul li a:hover {
+    text-decoration: underline;
+}
+header ul li ul {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: none;
+    position: absolute;
+    padding: 10px;
+    right:0;
+    width: 400px;
+    z-index: 1000;
+}
+header ul li:hover ul {
+    display: block;
+}
+header ul li img {
+    border-radius: 50%;
+}
+header ul li.subtotal-list {
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+li.list-cart {
+    position: relative;
+}
+li.list-cart ul li {
+    display: block;
+    padding: 10px 0;
+}
+li.list-cart ul li button {
+    border: 0;
+}
+li.list-cart ul li span {
+    padding: 0 10px;
+}
+li.list-cart sup {
+    background-color: #ff0000;
+        border-radius: 100%;
+        color: #fff;
+        font-weight: bold;
+        padding: 3px;
+}
+.floatClear {
+    clear: both;
+}
+li.user-profile {
+    position: relative;
+}
+li.user-profile span {
+    display: block;
+    height: 0;
+    width: 0;
+    border-width: 4px;
+    border-color: transparent;
+    border-style: solid;
+    border-top: 4px solid #333;
+    border-bottom-width: 0;
+    position: absolute;
+    top: 16px;
+    left: 29px;
+}
+header ul li.user-profile ul {
+    width: 250px;
+}
+header ul li.user-profile ul li a {
+    color: #490303;
+    padding: 2px;
+}
